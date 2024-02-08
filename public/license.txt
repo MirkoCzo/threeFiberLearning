@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pepsi Cans
+* source:	https://sketchfab.com/3d-models/pepsi-cans-1e15b1c20caf4741bbc883bc8051a282
+* author:	Safat_Rules (https://sketchfab.com/Safat_Rules)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pepsi Cans" (https://sketchfab.com/3d-models/pepsi-cans-1e15b1c20caf4741bbc883bc8051a282) by Safat_Rules (https://sketchfab.com/Safat_Rules) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
