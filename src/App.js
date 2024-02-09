@@ -9,6 +9,7 @@ import ARHouse from "./components/ARHouse";
 import XRScene from "./components/XRScene";
 import ARCube from "./components/ARCube";
 import MinecraftCube from "./components/MinecraftCube";
+import ARHouse2 from "./components/ARHouse2";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/XRScene" element={<XRScene/>}/>
             <Route path="/ARCube" element={<ARCube/>}/>
             <Route path="/MinecraftCube" element={<CubeContainer/>}/>
+            <Route path="/ARHouse2" element={<ARHouse2/>}/>
           </Routes>
         </Router>
       </Suspense>

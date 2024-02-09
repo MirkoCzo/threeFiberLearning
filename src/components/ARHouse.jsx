@@ -18,14 +18,14 @@ const Model = ({ scale, rotation, position }) => {
       modelRef.current.scale.set(scale,scale,scale);
     }
   });
-  let hitPoint = modelRef;
-  useHitTest((hitMatrix, hit)=>{
-    hitMatrix.decompose(
-      hitPoint.current.position,
-      hitPoint.current.rotation,
-      hitPoint.current.scale,
-    )
-  })
+  // let hitPoint = modelRef;
+  // useHitTest((hitMatrix, hit)=>{
+  //   hitMatrix.decompose(
+  //     hitPoint.current.position,
+  //     hitPoint.current.rotation,
+  //     hitPoint.current.scale,
+  //   )
+  // })
 
   return (
     <primitive
@@ -43,7 +43,7 @@ const ARHouse = () => {
   // Définition de l'état pour la mise à l'échelle, la rotation, et la position
   const [scale, setScale] = useState(0.1);
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
-  const [position, setPosition] = useState({ x: 0, y: -0, z: 0 });
+  const [position, setPosition] = useState({ x: 0, y: 1, z: -1 });
 
 
 
@@ -52,9 +52,11 @@ const ARHouse = () => {
       <ARButton />
         <Canvas style={{width:"100vh", height:"75vh"}} sessioninit={{requiredFeatures: ['hit-test']}}>
             <XR>
-                <ambientLight intensity={10}/>
-                <pointLight position={[0, 0, 2]} intensity={18} color={"white"} />
+                <ambientLight intensity={0.8}/>
+                <directionalLight intensity={2} color={"white"}/>
                     <Model scale={scale} rotation={rotation} position={position} />
+                    <directionalLight intensity={2} color={"white"}/>
+
             </XR>
         </Canvas>
     </>
