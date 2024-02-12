@@ -8,8 +8,9 @@ import ScrollScene from "./components/ScrollScene";
 import ARHouse from "./components/ARHouse";
 import XRScene from "./components/XRScene";
 import ARCube from "./components/ARCube";
-import MinecraftCube from "./components/MinecraftCube";
 import ARHouse2 from "./components/ARHouse2";
+import TestHitTest from "./components/TestHitTest";
+
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/ARCube" element={<ARCube/>}/>
             <Route path="/MinecraftCube" element={<CubeContainer/>}/>
             <Route path="/ARHouse2" element={<ARHouse2/>}/>
+            <Route path="/test" element={<TestHitTest/>}/>
           </Routes>
         </Router>
       </Suspense>
