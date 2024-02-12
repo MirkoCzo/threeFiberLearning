@@ -10,7 +10,8 @@ import XRScene from "./components/XRScene";
 import ARCube from "./components/ARCube";
 import ARHouse2 from "./components/ARHouse2";
 import TestHitTest from "./components/TestHitTest";
-
+import Image from "./components/Image";
+import Image360 from "./components/Image360";
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
             <Route path="/MinecraftCube" element={<CubeContainer/>}/>
             <Route path="/ARHouse2" element={<ARHouse2/>}/>
             <Route path="/test" element={<TestHitTest/>}/>
+            <Route path="/image" element={<Image/>}/>
+            <Route path="/image360" element={<Image360/>}/>
           </Routes>
         </Router>
       </Suspense>
