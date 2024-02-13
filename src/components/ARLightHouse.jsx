@@ -6,7 +6,7 @@ import { useThree } from "@react-three/fiber";
 import * as THREE from 'three'; 
 
 const Model = ({ scale, rotation, position }) => {
-  const model = useGLTF("/house.glb");
+  const model = useGLTF("/SecondModifiedBatiment.gltf");
   const modelRef = useRef();
   const { camera } = useThree();
   const [hitPosition, setHitPosition] = useState(null); // État pour stocker les coordonnées du point touché
@@ -85,10 +85,10 @@ const Model = ({ scale, rotation, position }) => {
   );
 };
 
-const ARHouse2 = () => {
-  const [scale, setScale] = useState(0.13);
+const LightHouse = () => {
+  const [scale, setScale] = useState(0.09);
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
-  const [position, setPosition] = useState({ x: 0, y: 1, z: -3 });
+  const [position, setPosition] = useState({ x: 0, y: 1.5, z: -5 });
 
   return (
     <>
@@ -96,11 +96,13 @@ const ARHouse2 = () => {
       <Canvas style={{ width: "100vh", height: "75vh" }} sessioninit={{ requiredFeatures: ['hit-test', 'plane-detection', 'vertical-plane-detection']  }}>
         <XR>
           <ambientLight intensity={0.8}/>
+          <directionalLight intensity={2} color={"white"}/>
           <Model scale={scale} rotation={rotation} position={position} />
+          <directionalLight intensity={2} color={"white"}/>
         </XR>
       </Canvas>
     </>
   );
 };
 
-export default ARHouse2;
+export default LightHouse;

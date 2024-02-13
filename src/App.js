@@ -12,7 +12,11 @@ import ARHouse2 from "./components/ARHouse2";
 import TestHitTest from "./components/TestHitTest";
 import Image from "./components/Image";
 import Image360 from "./components/Image360";
-
+import Teleporter from "./components/Teleporter";
+import LightHouse from "./components/ARLightHouse";
+import ARReticle from "./components/ARReticle.tsx";
+import ARReticleThree from "./components/ARReticleThree.tsx";
+import ARReticleThree2 from "./components/ARReticleThree2.jsx";
 
 function App() {
   return (
@@ -29,9 +33,15 @@ function App() {
             <Route path="/ARCube" element={<ARCube/>}/>
             <Route path="/MinecraftCube" element={<CubeContainer/>}/>
             <Route path="/ARHouse2" element={<ARHouse2/>}/>
-            <Route path="/test" element={<TestHitTest/>}/>
+            {/* <Route path="/test" element={<TestHitTest/>}/> */}
             <Route path="/image" element={<Image/>}/>
             <Route path="/image360" element={<Image360/>}/>
+            <Route path="/teleporter" element={<Teleporter/>}/>
+            <Route path="/lightHouse" element={<LightHouse/>}/>
+            <Route path="/ARReticle" element={<ARReticle/>}/>
+            <Route path="/ARReticleThree" element={<ARReticleThree/>}/>
+            {/* fonctionnel */}
+            <Route path="/test2" element={<ARReticleThree2/>}/> 
           </Routes>
         </Router>
       </Suspense>

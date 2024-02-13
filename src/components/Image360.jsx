@@ -13,7 +13,7 @@ const Image360 = () => {
         <XR>
         <Hands/>
           <ambientLight />
-          <ImageAR url="/salon.jpg" />
+          <ImageAR url="/salon2.jpg" />
         </XR>
       </Canvas>
     </>
@@ -26,7 +26,7 @@ const ImageAR = ({ url }) => {
   return (
     <>
       <mesh>
-        <sphereGeometry args={[10, 60, 40]} attach="geometry" />
+        <sphereGeometry args={[5, 40, 40]} attach="geometry" />
         <meshBasicMaterial attach="material" map={texture} side={THREE.BackSide} />
       </mesh>
     </>
