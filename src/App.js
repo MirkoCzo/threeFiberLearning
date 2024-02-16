@@ -17,6 +17,7 @@ import LightHouse from "./components/ARLightHouse";
 import ARReticle from "./components/ARReticle.tsx";
 import ARReticleThree from "./components/ARReticleThree.tsx";
 import ARReticleThree2 from "./components/ARReticleThree2.jsx";
+import AREnvironment from "./components/AREnvironment.jsx";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             <Route path="/ARCube" element={<ARCube/>}/>
             <Route path="/MinecraftCube" element={<CubeContainer/>}/>
             <Route path="/ARHouse2" element={<ARHouse2/>}/>
-            {/* <Route path="/test" element={<TestHitTest/>}/> */}
+            <Route path="/test" element={<TestHitTest/>}/>
             <Route path="/image" element={<Image/>}/>
             <Route path="/image360" element={<Image360/>}/>
             <Route path="/teleporter" element={<Teleporter/>}/>
@@ -42,6 +43,7 @@ function App() {
             <Route path="/ARReticleThree" element={<ARReticleThree/>}/>
             {/* fonctionnel */}
             <Route path="/test2" element={<ARReticleThree2/>}/> 
+            <Route path="/Environment" element={<AREnvironment/>}/>
           </Routes>
         </Router>
       </Suspense>

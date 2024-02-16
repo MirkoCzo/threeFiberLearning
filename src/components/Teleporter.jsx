@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { ARCanvas, ARButton, XR, VRButton, Hands } from '@react-three/xr';
-import { useEffect, useState } from 'react';
-import { Text } from "@react-three/drei";
+import { useEffect, useRef, useState } from 'react';
+import { Box, Text } from "@react-three/drei";
 import { Interactive } from "@react-three/xr";
 
 const ButtonVR = ({ position, onClick, buttonText }) => {
@@ -16,6 +16,23 @@ const ButtonVR = ({ position, onClick, buttonText }) => {
         {buttonText}
       </Text>
     </Interactive>
+  );
+};
+
+const Navbar = ({ children }) => {
+  const ref = useRef();
+  useFrame(({ camera }) => {
+    if (ref.current) {
+      ref.current.position.x = camera.position.x;
+      ref.current.position.y = camera.position.y;
+      ref.current.position.z = camera.position.z -0.38; // Ajustez cette valeur pour que la barre de navigation soit toujours devant la caméra
+    }
+  });
+
+  return (
+    <group ref={ref}>
+      {children}
+    </group>
   );
 };
 
@@ -34,9 +51,11 @@ const Image360 = () => {
           <Hands/>
           <ambientLight />
           <ImageAR url={imageUrl} />
-          <ButtonVR position={[-0.5, 1, -0.5]} onClick={() => handleButtonClick("/salon.jpg")} buttonText="TP Salon"/>
-          <ButtonVR position={[0, 1, -0.5]} onClick={() => handleButtonClick("/plage.jpg")} buttonText="TP Plage"/>
-          <ButtonVR position={[0.5, 1, -0.5]} onClick={() => handleButtonClick("/montagne.jpg")} buttonText="TP Montagne"/>
+          <Navbar>
+            <ButtonVR position={[-0.3, -0.2, 0]} onClick={() => handleButtonClick("/salon.jpg")} buttonText="TP Salon"/>
+            <ButtonVR position={[0, -0.2, 0]} onClick={() => handleButtonClick("/plage.jpg")} buttonText="TP Plage"/>
+            <ButtonVR position={[0.3, -0.2, 0]} onClick={() => handleButtonClick("/montagne.jpg")} buttonText="TP Montagne"/>
+          </Navbar>
         </XR>
       </Canvas>
     </>
